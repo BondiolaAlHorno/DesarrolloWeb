@@ -1,14 +1,20 @@
-public class Docente {
-    String titulo;
+public class Docente extends Persona {
+    private String titulo;
 
-    public Docente (String title){
-        this. titulo=title;
+    public Docente (String apellido, String nombre, String titulo){
+        super(apellido, nombre);
+        this. titulo = titulo;
     }
+
     public String getTitulo(){
-        return titulo;
-
+        return this.titulo;
     }
-    public void setTitulo(String title) {
-        this.titulo=title;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void modificarDocente(String apellido, String nombre, String titulo){
+        modificarPersona(apellido, nombre);
+        setTitulo(titulo);
     }
 }
